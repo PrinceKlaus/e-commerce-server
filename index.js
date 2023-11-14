@@ -1,7 +1,6 @@
 const express=require('express')
 const route=require('./route/route')
-const cors=require('cors')
-const contextData=require('./controller/contextData')
+const cors=require("cors")
 const app=express();
 app.use(cors({
     origin:"*"
@@ -9,9 +8,7 @@ app.use(cors({
 
 // app.use("/api",route)
 
-app.get("/api/ecommdata",(req,res)=>{
-    res.send(contextData)
-})
+app.use("/api",route)
 
 app.listen(8001,()=>{
     try{
